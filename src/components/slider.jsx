@@ -15,7 +15,17 @@ export default function SwiperComponent () {
                     prevEl: '.swiper-button-prev',
                   }}
                   spaceBetween={10}
-                  slidesPerView={4}
+                  slidesPerView={'auto'}
+                  breakpoints={{
+                    640: {
+                        slidesPerView: 'auto',
+                        spaceBetween: 10,
+                    },
+                    1040: {
+                        slidesPerView: 4,
+                        spaceBetween: 30
+                    }
+                  }}
                 >
                 <SwiperSlide className="relative rounded-[12px] bg-contain h-full" style={{ backgroundImage: `url(${'../../public/slider/slide1.webp'})`, backgroundSize:"cover"}}>
                     <div className="back-shadow"></div>

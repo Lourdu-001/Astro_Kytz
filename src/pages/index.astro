@@ -43,7 +43,7 @@ import Branding from "../components/Branding.astro"
 		<!-- Featured Websites -->
 		<div class="featured-branding lg:py-20 py-10 lg:px-16 px-8">
 			<div class="featured-branding-title flex lg:flex-row flex-col items-center justify-between lg:pb-16 pb-8">
-				<div class="text-[36px] font-medium leading-[43.57px] text-center font-inter text-white">Featured Websites</div>
+				<div class="text-[36px] font-medium leading-[43.57px] text-center font-inter text-white lg:pb-0 pb-5">Featured Websites</div>
 				<div class="identity-brand">
 					<button class="brand-button py-3 px-8 rounded-lg inline-flex items-center" style="background-color: #C9F001;">
 						<svg class="inline me-3" width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -57,7 +57,7 @@ import Branding from "../components/Branding.astro"
 			<div class="kytz-flexbox pb-16">
 				<div class="flex lg:flex-row flex-col gap-6">
 					<div class="branding-webite flex-1">
-						<div class="websites-firstbox-first px-10 py-12 flex justify-between gap-10">
+						<div class="websites-firstbox-first px-10 py-12 flex lg:flex-row flex-col justify-between lg:gap-10 gap-4">
 							<div class="flexbox">
 								<div class="text-[14px] font-normal leading-[16.94px] text-start font-inter text-white opacity-50 py-6">Client: Freshara</div>
 								<div class="font-medium leading-[29.05px] tracking-[-0.04em] text-start font-inter text-white pb-6" style="font-size: 20px;">Eco Friendly - Low Carbon Site</div>
@@ -79,9 +79,9 @@ import Branding from "../components/Branding.astro"
 						</div>
 					</div>
 					<div class="branding-webite flex-1">
-						<div class="websites-firstbox-first px-10 py-12 flex justify-between gap-10">
+						<div class="websites-firstbox-first px-10 py-12 flex lg:flex-row flex-col justify-between lg:gap-10 gap-4">
 							<div class="flexbox">
-								<div class="text-[14px] font-normal leading-[16.94px] text-start font-inter text-white opacity-50 py-6">Client: RFL Valves</div>
+								<div class="text-[14px] font-normal leading-[16.94px] text-start font-inter text-white opacity-50 py-6 lg:pb-0 pb-5">Client: RFL Valves</div>
 								<div class="font-medium leading-[29.05px] tracking-[-0.04em] text-start font-inter text-white pb-6" style="font-size: 20px;">Designed Modern Website</div>
 								<Tbtn btnText="Sustainable">
 							</div>
@@ -117,7 +117,7 @@ import Branding from "../components/Branding.astro"
 					<div class="forward-arrow"></div>
 				</div>
 			</div>
-			<Slider client:load/>
+			<Slider client:visible/>
 		</div>
 
 		<Tagline />

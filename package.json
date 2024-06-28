@@ -1,11 +1,11 @@
 {
-  "name": "",
+  "name": "kytz",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "npm run build",
     "preview": "astro preview",
     "astro": "astro"
   },
