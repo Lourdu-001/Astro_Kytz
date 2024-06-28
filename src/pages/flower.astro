@@ -47,6 +47,31 @@ import "../flower.css"
     var flowerR_leaf = document.querySelector(".bottomR_leaf");
     var tab_position= document.querySelector(".flower-animation").getBoundingClientRect().y;
     var tab_number = Number(tab_position.toFixed());
+    var meter_position= document.querySelector(".sustainable").getBoundingClientRect().y;
+    var meter_number = Number(meter_position.toFixed());
+
+    var opts = {
+        lines: 12, // The number of lines to draw
+        angle: 0.00, // The length of each line
+        lineWidth: 0.10, // The line thickness
+        
+        pointer: {
+            length: 0.5, // The radius of the inner circle
+            strokeWidth: 0.035, // The rotation offset
+            color: '#666666' // Fill color
+        },
+        
+        limitMax: false,   // If true, the pointer will not go past the end of the gauge
+        colorStart: '#DEDEDE',   // Colors
+        colorStop: '#00C71C',    // just experiment with them
+        strokeColor: '#E0E0E0',   // to see which ones work best for you
+        generateGradient: true,
+    };
+
+    var target = document.getElementById('foo'); // your canvas element
+    var gauge = new Gauge(target).setOptions(opts); // create sexy gauge!
+    gauge.maxValue = 200; // set max gauge value
+    gauge.animationSpeed = 900; // set animation speed (32 is default value)
 
     if(window.innerWidth < 600) {
         flowerL_leaf.setAttribute("src", "../../public/leaf/leftL.webp");
@@ -56,7 +81,7 @@ import "../flower.css"
 
    window.onscroll = () => {
         var page_position = window.pageYOffset;
-        var page_cutoff = Number(page_position.toFixed());    
+        var page_cutoff = Number(page_position.toFixed());      
 
         if(page_cutoff > (tab_number - 200)) {
             flower_contents1.classList.add("move1");
@@ -74,6 +99,11 @@ import "../flower.css"
             flowerL_leaf.classList.remove("rotateL");
             flowerR_leaf.classList.remove("rotateR");
             leaf.classList.remove("opacityLeaf");
+        }
+
+
+        if(page_cutoff > (meter_number -200)) {
+            gauge.set(200);
         }
    }
 </script>

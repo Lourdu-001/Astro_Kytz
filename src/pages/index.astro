@@ -14,6 +14,7 @@ import Slider from "../components/slider"
 import Tagline from "../components/Tagline.astro"
 import Footer from "../components/footer.astro";
 import Branding from "../components/Branding.astro"
+import NewSlider from "../components/NewSlider.astro"
 ---
 
 <Header client:visible>
@@ -59,7 +60,7 @@ import Branding from "../components/Branding.astro"
 					<div class="branding-webite flex-1">
 						<div class="websites-firstbox-first px-10 py-12 flex lg:flex-row flex-col justify-between lg:gap-10 gap-4">
 							<div class="flexbox">
-								<div class="text-[14px] font-normal leading-[16.94px] text-start font-inter text-white opacity-50 py-6">Client: Freshara</div>
+								<div class="text-[14px] font-normal leading-[16.94px] text-start font-inter text-white opacity-50 pb-6">Client: Freshara</div>
 								<div class="font-medium leading-[29.05px] tracking-[-0.04em] text-start font-inter text-white pb-6" style="font-size: 20px;">Eco Friendly - Low Carbon Site</div>
 								<Tbtn btnText="Sustainable">
 							</div>
@@ -81,7 +82,7 @@ import Branding from "../components/Branding.astro"
 					<div class="branding-webite flex-1">
 						<div class="websites-firstbox-first px-10 py-12 flex lg:flex-row flex-col justify-between lg:gap-10 gap-4">
 							<div class="flexbox">
-								<div class="text-[14px] font-normal leading-[16.94px] text-start font-inter text-white opacity-50 py-6 lg:pb-0 pb-5">Client: RFL Valves</div>
+								<div class="text-[14px] font-normal leading-[16.94px] text-start font-inter text-white opacity-50 pb-6">Client: RFL Valves</div>
 								<div class="font-medium leading-[29.05px] tracking-[-0.04em] text-start font-inter text-white pb-6" style="font-size: 20px;">Designed Modern Website</div>
 								<Tbtn btnText="Sustainable">
 							</div>
@@ -106,7 +107,7 @@ import Branding from "../components/Branding.astro"
 
 		<Sustainable />
 
-		<div class="slider lg:pt-20 pt-14 lg:px-16 px-8 pb-16 lg:mb-0 mb-16 relative">
+		<div class="slider lg:pt-20 pt-14 pb-16 lg:px-16 px-8 pb-16 relative">
 			<div class="young-talents">
 				<div class="young-talents-title lg:pb-20 pb-10">
 					<span>Providing results with</span><br>
@@ -117,7 +118,8 @@ import Branding from "../components/Branding.astro"
 					<div class="forward-arrow"></div>
 				</div>
 			</div>
-			<Slider client:visible/>
+			<!-- <Slider client:visible/> -->
+			 <Slider client:visible />
 		</div>
 
 		<Tagline />
