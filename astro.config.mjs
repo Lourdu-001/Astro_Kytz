@@ -1,15 +1,11 @@
-import { defineConfig } from "astro/config";
-import sitemap from "@astrojs/sitemap";
+import { defineConfig } from 'astro/config';
+
+import tailwind from "@astrojs/tailwind";
+
+import { defineConfig } from 'astro/config';
+import react from '@astrojs/react';
 
 // https://astro.build/config
 export default defineConfig({
-	site: "https://blahg.netlify.app/",
-	base: "/",
-	integrations: [sitemap()],
-	markdown: {
-		shikiConfig: {
-			theme: "material-theme-darker",
-			langs: [],
-		},
-	},
+  integrations: [tailwind(), react()]
 });

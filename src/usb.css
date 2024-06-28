@@ -1,0 +1,62 @@
+/* -------------------- FEATURES ----------------
+______________________________________________________ */
+
+.feature-count {
+    font-family: Inter;
+    font-size: 70px;
+    font-weight: 600;
+    line-height: 84.72px;
+    letter-spacing: -0.03em;
+    text-align: left;
+    color: #000000;
+    text-align: center;
+    padding-bottom: .8rem;
+}
+.count-text{
+    font-family: Inter;
+    font-size: 20px;    
+    font-weight: 500;
+    line-height: 24.2px;
+    letter-spacing: -0.04em;
+    text-align: left;
+    color: #00A117;
+    text-align:center;
+}
+.kytz-box{
+    position: relative;
+}
+.partition-line{
+    position: absolute;
+    right:0;
+    top:0;
+}
+
+@media (max-width: 600px) {
+    .feature-count{
+        font-size: 47px;
+    }
+    .middle-line {
+        top: 50%;
+    }
+    .count-text{
+        font-size:16px;
+    }
+    .feature-cover::before{
+        content: "";
+        width: 2px;
+        height: 100%;
+        left:50%;
+        position: absolute;
+        background-image: url("../public/vertocal-line.webp");
+        background-repeat: no-repeat;
+    }
+    .feature-cover::after{
+        content: "";
+        width: 100%;
+        height: 1.3px;
+        top:50%;
+        position: absolute;
+        background-image: url("../public/horizondal-line.webp");
+        background-repeat: no-repeat;
+    }
+}

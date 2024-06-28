@@ -1,0 +1,223 @@
+---
+    import logo from "../../public/kytz_logo.webp" 
+---
+
+<style>
+    /* ------------------------ NAVBAR -------------------
+    _______________________________________________________ */
+    
+    nav{
+        transition: all 1s ease;
+        height: auto;
+        background-color: #06041A;
+        z-index: 1;
+    }
+    .Dlogo{
+        font-family: Actor;
+        font-size: 26px;
+        font-weight: 400;
+        line-height: 31px;
+        letter-spacing: -0.02em;
+        text-align: left;
+        color:rgba(41, 44, 117, 1);
+    }
+    #sideopen_D{
+        position:absolute;
+        visibility: hidden;
+        cursor: pointer;
+    }
+    .sidebox_D{
+        position:absolute;  
+        display: none;
+        transition: all 1s ease-in-out;
+        z-index:1;
+        top:0;
+        width: 36%;
+    }
+    #sideopen_D:checked ~ .sidebox_D{
+        display: block;
+        right:0;
+        top: 68px;
+    }
+    .sidebar_dropdown{
+        padding: 4rem 2.5rem;
+        border-radius: 10px;
+        background-color: black;
+        box-shadow: 1px 1px 5px gray;
+        background-color:#1F1D31;
+        margin-top: 1rem;
+    }
+    .background_images{
+        z-index: -1;
+        inset:0;
+        background-image: url("assets/Images/bg1.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        transition: all .3 ease;
+    }
+    .kytz-label{
+        font-family: Inter;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 19.36px;
+        text-align: left;
+        color: #FFFFFF;
+        display:inline-flex;
+        align-items:center;
+        background-color: #1E1D30;
+        cursor: pointer;
+    }
+    .navbarD{
+        height: 100px;
+        background-color: #04030A;
+    }
+    .navlistItem{
+        font-family: Inter;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 19.36px;
+        text-align: left;
+        color: rgb(255, 255, 255, .5);
+        padding-bottom: 1rem;
+    }
+    .navlistItem:hover{
+        color: rgb(255, 255, 255);
+    }
+    #headerD{
+        height: 633px;
+    }
+    .header_content_section{
+        height: 548px;
+    }
+    .contact_D{
+        border-radius: 6px;
+        background: #19B68F;
+        color: #FFF;
+        font-family: Inter;
+        font-size: 17px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        letter-spacing: -0.17px;
+    }
+    .button_D{
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 19.36px;
+        color: #04030A;
+        background-color: #FFFFFF;
+        border-radius: 11px;
+        padding: .8rem 1.8rem;
+    }
+    .nav_contact_line{
+        background: rgba(41, 44, 117, 1);
+        outline: 1px solid #0DC195;
+    }
+    .nav_contact > span{
+        font-family: Inter;
+        font-size: 15px;
+        font-weight: 400;
+        text-align: left;
+        color: rgba(255, 255, 255, 1);
+        padding: 0.5rem 0;
+        letter-spacing: .2px;
+    }
+    .appointment{
+        font-family: Inter;
+        font-size: 15px;
+        font-weight: 500;
+        line-height: 18.15px;
+        letter-spacing: -0.02em;
+        text-align: left;
+        color: rgba(255, 255, 255, 1);
+        padding: 14px 25px 14px 25px;
+        background-color: rgba(66, 190, 163, 1);
+        border-radius: 33px;
+    }
+    .facebook{
+        background-image: url("../images/socialmedia/facebook.webp");
+        width: 21px;
+        height: 21px;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    .linkedin{
+        background-image: url("../images/socialmedia/linkedIn.webp");
+        width: 20px;
+        height: 20px;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    .instagram{
+        background-image: url("../images/socialmedia/instagram.webp");
+        width: 20px;
+        height: 20px;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    .youtube{
+        background-image: url("../images/socialmedia/youtube.webp");
+        width: 22px;
+        height: 15.47px;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    @media (max-width: 600px){
+        .site-logo{
+            max-width: 50%;
+        }
+        .nav_contact > span{
+            padding: 1rem 0;
+        }
+        .appointment{
+            margin-top: 1rem;
+            font-size: 13px;
+        }
+        .nav_contact > span{
+            line-height: 22.15px;
+        }
+        .sidebox_D{
+            width:100%;
+            left:0;
+        }
+    }
+
+</style>
+<nav class="lg:absolute top-0 inset-x-0">
+    <div class="py-5 nav lg:px-10 px-8 h-full flex flex-row items-center justify-between">
+        <div class="lg:w-80 w-10/12 w-full">
+            <a aria-label="Home page link" href="#"><img alt="website logo" src={logo.src} title="website logo to the home page" width="120" height="45.61" style="max-width:100%; max-height:100%;"></a>
+        </div>
+        <div class="flex-1 h-full flex justify-end">
+            <label class="kytz-label gap-3 py-3 px-6 rounded-lg" for="sideopen_D" class="flex items-center justify-end text-white flex  w-full text-2xl float-end">
+                Menu 
+                <svg width="15" height="11" viewBox="0 0 15 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.86719 0.803223H6.86719C7.1324 0.803223 7.38676 0.90858 7.57429 1.09612C7.76183 1.28365 7.86719 1.53801 7.86719 1.80322C7.86719 2.06844 7.76183 2.32279 7.57429 2.51033C7.38676 2.69787 7.1324 2.80322 6.86719 2.80322H1.86719C1.60197 2.80322 1.34762 2.69787 1.16008 2.51033C0.972544 2.32279 0.867188 2.06844 0.867188 1.80322C0.867188 1.53801 0.972544 1.28365 1.16008 1.09612C1.34762 0.90858 1.60197 0.803223 1.86719 0.803223ZM8.86719 8.80322H13.8672C14.1324 8.80322 14.3868 8.90858 14.5743 9.09612C14.7618 9.28365 14.8672 9.53801 14.8672 9.80322C14.8672 10.0684 14.7618 10.3228 14.5743 10.5103C14.3868 10.6979 14.1324 10.8032 13.8672 10.8032H8.86719C8.60197 10.8032 8.34762 10.6979 8.16008 10.5103C7.97254 10.3228 7.86719 10.0684 7.86719 9.80322C7.86719 9.53801 7.97254 9.28365 8.16008 9.09612C8.34762 8.90858 8.60197 8.80322 8.86719 8.80322ZM1.86719 4.80322H13.8672C14.1324 4.80322 14.3868 4.90858 14.5743 5.09612C14.7618 5.28365 14.8672 5.53801 14.8672 5.80322C14.8672 6.06844 14.7618 6.32279 14.5743 6.51033C14.3868 6.69787 14.1324 6.80322 13.8672 6.80322H1.86719C1.60197 6.80322 1.34762 6.69787 1.16008 6.51033C0.972544 6.32279 0.867188 6.06844 0.867188 5.80322C0.867188 5.53801 0.972544 5.28365 1.16008 5.09612C1.34762 4.90858 1.60197 4.80322 1.86719 4.80322Z" fill="#C9F001"/>
+                </svg>
+            </label>
+            <input type="checkbox" id="sideopen_D" />
+            <div class="sidebox_D lg:px-16 px-8" id="sidebar_D">
+                <div class="sidebar_dropdown">
+                    <div class="navlistItem mblist"><a aria-label="Home Us page link" href="">Home</a></div>
+                    <div class="navlistItem mblist"><a aria-label="Treatments page link" href="">Sustainable Development</a></div>
+                    <div class="navlistItem mblist"><a aria-label="About Us page link" href="">Website Development</a></div>
+                    <div class="navlistItem mblist"><a aria-label="Gallery page link" href="">Brand story</a></div>
+                    <div class="navlistItem mblist"><a aria-label="Contact page link" href="">Contact</a></div>
+                    <div class="pb-8 pt-6">
+                        <svg width="201" height="2" viewBox="0 0 201 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path opacity="0.5" d="M0.326172 1.07959H200.326" stroke="white" stroke-dasharray="6 6"/>
+                        </svg>
+                    </div>
+                    <div class="follow-link text-white pb-6">Follow us on</div>
+                    <div class="inline-flex items-center gap-8">
+                        <div class="facebook"></div>
+                        <div class="linkedin"></div>
+                        <div class="instagram"></div>
+                        <div class="youtube"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>

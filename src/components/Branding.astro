@@ -1,0 +1,250 @@
+
+<style>
+   /* -------------------- FEATURED BRANDING ----------------
+______________________________________________________ */
+
+    .new_class{
+        font-family: Inter;
+        font-size: 28px;
+        font-weight: 500;
+        line-height: 33.89px;
+        letter-spacing: -0.03em;
+        text-align: left;
+    }
+
+    .featured-branding{
+        background-color: #06041A;
+    }
+
+    .educational-images{
+        height: 300px;
+        background-image: url("../../public/educational_brands/education_brand1.webp");
+        background-size: cover;
+        width: 100%;
+        border-radius: 0 0 10px 10px;
+        background-position: center;
+    }
+    .cyber-security-images{
+        height: 300px;
+        background-image: url("../../public/cyber_security_branding/cyber-security1.webp");
+        background-size: cover;
+        width: 100%;
+        border-radius: 0 0 10px 10px;
+        background-position: center;
+    }
+    .tech-company{
+        height: 300px;
+        background-image: url("../../public/tech_company/gaming_application1.webp");
+        background-size: cover;
+        width: 100%;
+        border-radius: 0 0 10px 10px;
+        background-position: center;
+    }
+    .change-ani-cover{
+        background-color: #1A182C;
+        border-radius: 10px 10px 0 0;
+    }
+    .branding-stroke-button{
+        font-size: 12px;
+        font-weight: 500;
+        /* color: #1E1E1E;  */
+        color: #1E1E1E;
+        border-radius: 50px;
+        border: 1px solid #1E1E1E;
+    }
+    .addeducation{
+        animation: bgeducation 2s infinite;
+    }
+
+    @keyframes bgeducation {
+        0%{
+            background-image: url("../../public/educational_brands/education_brand1.webp");
+        }
+        20%{
+            background-image: url("../../public/educational_brands/education_brand1.webp");
+        }
+        40%{
+            background-image: url("../../public/educational_brands/education_brand2.webp");
+        }
+        60%{
+            background-image: url("../../public/educational_brands/education_brand2.webp");
+        }
+        80%{
+            background-image: url("../../public/educational_brands/education_brand3.webp");
+        }
+        100%{
+            background-image: url("../../public/educational_brands/education_brand3.webp");
+        }
+    }
+
+    .addcyber{
+        animation: bgcyber 2s infinite;
+    }
+
+    @keyframes bgcyber {
+        0%{
+            background-image: url("../../public/cyber_security_branding/cyber-security1.webp");
+        }
+        20%{
+            background-image: url("../../public/cyber_security_branding/cyber-security1.webp");
+        }
+        40%{
+            background-image: url("../../public/cyber_security_branding/cyber-security2.webp");
+        }
+        60%{
+            background-image: url("../../public/cyber_security_branding/cyber-security2.webp");
+        }
+        80%{
+            background-image: url("../../public/cyber_security_branding/cyber-security3.webp");
+        }
+        100%{
+            background-image: url("../../public/cyber_security_branding/cyber-security3.webp");
+        }
+    }
+
+    .addtech{
+        animation: bgtech 2s ease infinite;
+    }
+
+    @keyframes bgtech {
+        0%{
+            background-image: url("../../public/tech_company/gaming_application1.webp");
+        }
+        20%{
+            background-image: url("../../public/tech_company/gaming_application1.webp");
+        }
+        40%{
+            background-image: url("../../public/tech_company/gaming_application2.webp");
+        }
+        60%{
+            background-image: url("../../public/tech_company/gaming_application2.webp");
+        }
+        80%{
+            background-image: url("../../public/tech_company/gaming_application3.webp");
+        }
+        100%{
+            background-image: url("../../public/tech_company/gaming_application3.webp");
+        }
+    }
+
+    @media (max-width: 600px) {
+        .h2{
+            font-size: 26px;
+        }
+        .identity-brand{
+            display: none;
+        }
+        .h4{
+            font-size: 22.23px;
+        }
+    }
+
+</style>
+<!-- Featured Branding -->
+<div class="featured-branding lg:px-16 px-10 lg:py-20 py-10">
+    <div class="featured-branding-title flex lg:flex-row flex-col items-center justify-between lg:pb-16 pb-10">
+        <div class="h2">Featured Branding</div>
+        <div class="identity-brand md:inline hidden">
+            <button class="brand-button py-3 px-8 rounded-lg">
+                <svg class="inline me-3" width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7.07335 2.30402L1.51273 2.30402C1.25176 2.29948 1.00302 2.19263 0.820065 2.00647C0.637115 1.82031 0.5346 1.56974 0.5346 1.30874C0.5346 1.04773 0.637115 0.79716 0.820065 0.611003C1.00302 0.424845 1.25176 0.317991 1.51273 0.313455L9.47639 0.313456C9.60719 0.313082 9.73678 0.338569 9.85771 0.388455C9.97863 0.438339 10.0885 0.511637 10.181 0.604132C10.2735 0.696627 10.3468 0.806494 10.3967 0.927417C10.4466 1.04834 10.472 1.17793 10.4717 1.30874L10.4717 9.27239C10.4634 9.53079 10.3549 9.77582 10.1691 9.95563C9.98335 10.1354 9.73493 10.2359 9.4764 10.2359C9.21787 10.2358 8.96951 10.1351 8.78389 9.95514C8.59826 9.7752 8.48993 9.53009 8.48181 9.27169L8.48181 3.71107L1.73445 10.4584C1.54777 10.6451 1.29458 10.75 1.03058 10.75C0.766571 10.75 0.513379 10.6451 0.326699 10.4584C0.14002 10.2717 0.0351454 10.0185 0.0351451 9.75455C0.0351451 9.49054 0.140021 9.23735 0.3267 9.05067L7.07335 2.30402Z" fill="#282828"/>
+                </svg>
+                Get your brand identity today
+            </button>
+        </div>
+    </div>
+
+    <div class="grid lg:grid-cols-3 grid-cols-1 gap-6">
+        <div class="branding-box group">
+            <div class="change-ani-cover pt-12 px-10">
+                <div class="new_class text-white group-hover:text-black">
+                    Ed-tech Startup Identity
+                </div>
+                <div class="paired-btn py-10 group-hover:opacity-100 opacity-0">
+                    <button class="branding-stroke-button py-2 lg:px-5 px-3 me-2">Branding</button>
+                    <button class="branding-stroke-button py-2 lg:px-5 px-3">2 Weeks</button>
+                </div>
+            </div>
+            <div class="educational-images gan">
+                
+            </div>  
+        </div>
+
+        <div class="branding-box group">
+            <div class="change-ani-cover pt-12 px-10">
+                <div class="new_class text-white group-hover:text-black">
+                    Cyber Security branding
+                </div>
+                <div class="paired-btn py-10 group-hover:opacity-100 opacity-0">
+                    <button class="branding-stroke-button py-2 lg:px-5 px-3 me-2">Branding & Website</button>
+                    <button class="branding-stroke-button py-2 lg:px-5 px-3">3 Weeks</button>
+                </div>
+            </div>
+            <div class="cyber-security-images gan">
+                
+            </div>  
+        </div>
+
+        <div class="branding-box group">
+            <div class="change-ani-cover pt-12 px-10">
+                <div class="new_class text-white group-hover:text-black">
+                    Gaming Application Branding
+                </div>
+                <div class="paired-btn py-10 group-hover:opacity-100 opacity-0">
+                    <button class="branding-stroke-button py-2 lg:px-5 px-3 me-2">Branding</button>
+                    <button class="branding-stroke-button py-2 lg:px-5 px-3">2 Weeks</button>
+                </div>
+            </div>
+            <div class="tech-company gan">
+                
+            </div>  
+        </div>
+    </div>
+
+    <div class="identity-brand md:hidden block w-full pt-14">
+        <button class="brand-button py-3 px-8 rounded-lg block w-full">
+            <svg class="inline me-3" width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.07335 2.30402L1.51273 2.30402C1.25176 2.29948 1.00302 2.19263 0.820065 2.00647C0.637115 1.82031 0.5346 1.56974 0.5346 1.30874C0.5346 1.04773 0.637115 0.79716 0.820065 0.611003C1.00302 0.424845 1.25176 0.317991 1.51273 0.313455L9.47639 0.313456C9.60719 0.313082 9.73678 0.338569 9.85771 0.388455C9.97863 0.438339 10.0885 0.511637 10.181 0.604132C10.2735 0.696627 10.3468 0.806494 10.3967 0.927417C10.4466 1.04834 10.472 1.17793 10.4717 1.30874L10.4717 9.27239C10.4634 9.53079 10.3549 9.77582 10.1691 9.95563C9.98335 10.1354 9.73493 10.2359 9.4764 10.2359C9.21787 10.2358 8.96951 10.1351 8.78389 9.95514C8.59826 9.7752 8.48993 9.53009 8.48181 9.27169L8.48181 3.71107L1.73445 10.4584C1.54777 10.6451 1.29458 10.75 1.03058 10.75C0.766571 10.75 0.513379 10.6451 0.326699 10.4584C0.14002 10.2717 0.0351454 10.0185 0.0351451 9.75455C0.0351451 9.49054 0.140021 9.23735 0.3267 9.05067L7.07335 2.30402Z" fill="#282828"/>
+            </svg>
+            Get your brand identity today
+        </button>
+    </div>
+</div>
+<script>
+    /* _______________ FEATURED BRANDING ______________
+        --------------------------------------------------- */
+    var branding_box = document.querySelectorAll(".branding-box");
+    var change_ani_cover = document.querySelectorAll(".change-ani-cover");
+    var educational_images = document.querySelectorAll(".gan");
+
+    branding_box.forEach((pairedData, pairedIndex) => {
+        
+        pairedData.onmouseover=() => {
+            change_ani_cover[pairedIndex].style.backgroundColor="#C9F001";
+
+            if(pairedIndex == 0) {
+                educational_images[0].classList.add("addeducation");
+            }
+            if(pairedIndex == 1) {
+                educational_images[1].classList.add("addcyber");
+            }
+            if(pairedIndex == 2) {
+                educational_images[2].classList.add("addtech");
+            }
+        }
+
+        pairedData.onmouseleave=() => {
+            change_ani_cover[pairedIndex].style.backgroundColor="#1A182C";
+
+            if(pairedIndex == 0) {
+                educational_images[0].classList.remove("addeducation");
+            }
+            if(pairedIndex == 1) {
+                educational_images[1].classList.remove("addcyber");
+            }
+            if(pairedIndex == 2) {
+                educational_images[2].classList.remove("addtech");
+            }
+        }
+    })
+</script>

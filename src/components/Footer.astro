@@ -1,14 +1,119 @@
 ---
-const today = new Date();
+import LogoFooter from "../../public/kytz_footer_logo.webp"
+import Co2 from "../../public/co2_percentage.webp"
 ---
 
-<footer>
-	&copy; {today.getFullYear()} cassidoo. <a href="https://github.com/cassidoo/blahg">This blog is open source</a>! <3
-</footer>
+<div class="footer lg:px-16 px-8 py-12">
+    <div class="footer-inner-layer flex lg:flex-row flex-col justify-between">
+        <div class="footer-logo-section flex flex-col lg:justify-between lg:items-start items-center">
+            <img src={LogoFooter.src} width="180" height="63.41" />
+            <div class="copyright lg:block hidden">Copyrights Reserved @ Kytz</div>
+        </div>
+        <div class="quick-links-section lg:block hidden">
+            <div class="quick-link opacity-50 pb-10">QUICK LINKS</div>
+            <div class="quick-link">Home</div>
+            <div class="quick-link">Company</div>
+            <div class="quick-link">Website Case Studies</div>
+            <div class="quick-link">Brand Case Studies</div>
+            <div class="quick-link">Contact</div>
+        </div>
+        <div class="quick-links-section lg:hidden block py-10">
+            <div class="quick-link opacity-50 pb-2">QUICK LINKS</div>
+            <div class="flex flex-row flex-wrap gap-4">
+                <div class="quick-link">Home</div>
+                <div class="quick-link">Company</div>
+                <div class="quick-link">Website Case Studies</div>
+                <div class="quick-link">Brand Case Studies</div>
+                <div class="quick-link">Contact</div>
+            </div>
+        </div>
+        <div class="social-media-section lg:block hidden">
+            <div class="quick-link opacity-50 pb-10">SOCIAL MEDIA</div>
+            <div class="quick-link">LinkedIn</div>
+            <div class="quick-link">Youtybe</div>
+            <div class="quick-link">Instagram</div>
+            <div class="quick-link">X</div>
+        </div>
+        <div class="social-media-section lg:hidden block pt-10 pb-10">
+            <div class="quick-link opacity-50 pb-2">SOCIAL MEDIA</div>
+            <div class="flex flex-row justify-between">
+                <div class="quick-link">LinkedIn</div>
+                <div class="quick-link">Youtybe</div>
+                <div class="quick-link">Instagram</div>
+                <div class="quick-link">Twitter X</div>
+            </div>
+        </div>
+        <div class="website-carbon-section flex flex-col justify-between lg:block hidden">
+            <div class="carbon-percentage pb-10">
+                <img src={ Co2.src } width="266.78" height="27.77" > 
+            </div>
+            <div class="other-statics">
+                <div class="quick-link">Cleaner than 86% of pages tested</div>
+                <div class="quick-link" style="border-bottom: 1px dashed white"></div>
+                <div class="quick-link py-3 opacity-50">100% Green website</div>
+                <div class="quick-link opacity-50">Hosted on Green Server</div>
+            </div>
+        </div>
+        <div class="website-carbon-section flex flex-col justify-between pt-10 lg:hidden block">
+            <div class="carbon-percentage flex justify-center pb-3">
+                <img src={ Co2.src } width="266.78" height="27.77" > 
+            </div>
+            <div class="other-statics flex flex-col items-center">
+                <div class="quick-link text-center">Cleaner than 86% of pages tested</div>
+                <div class="quick-link w-10/12" style="border-bottom: 1px dashed white"></div>
+                <div class="quick-link py-3 opacity-50">100% Green website</div>
+                <div class="quick-link opacity-50 pb-10">Hosted on Green Server</div>
+            </div>
+        </div>
+        <div class="copyright lg:hidden block pt-8 text-center">Copyrights Reserved @ Kytz</div>
+    </div>
+</div>
 <style>
-	footer {
-		padding: 25px;
-		text-align: center;
-		font-size: 0.8rem;
-	}
+    /* -------------------- FOOTER ----------------
+______________________________________________________ */
+
+.footer{
+        background-color: #06041A;
+    }
+    .copyright{
+        font-family: Inter;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 22.4px;
+        letter-spacing: -0.01em;
+        text-align: left;
+        color: #FFFFFF4D;
+    }
+    .quick-link{
+        font-family: Inter;
+        font-size: 17px;
+        font-weight: 500;
+        line-height: 27.2px;
+        letter-spacing: -0.04em;
+        text-align: left;
+        color: #FFFFFF;
+        padding-bottom: .5em;
+    }
+    .carbon-percentage{
+        border-radius: 10px;
+    }
+    @media (max-width: 600px) {
+        .footer-logo-section > img {
+            max-width: 30%;
+        }
+        .footer-logo-section {
+            padding-bottom: 2.5rem;
+        }
+        .social-media-section{
+            border-bottom: 1px dashed white;
+        }
+        .quick-links-section {
+            border-top: 1px dashed white;
+            border-bottom: 1px dashed white;
+        }
+        .website-carbon-section{
+            border-bottom: 1px dashed white;
+        }
+    }
+
 </style>

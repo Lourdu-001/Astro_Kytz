@@ -1,43 +1,128 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import HomePosts from "../components/HomePosts.astro";
-import ColorScript from "../components/ColorScript.astro";
-import Tags from "../components/Tags.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
-import { Content as About } from "./about.md";
-import getTags from "../scripts/getTags";
-
-const posts = await Astro.glob("../posts/*.md");
-
-const tags = getTags(posts);
+import Layout from '../layouts/Layout.astro';
+import Header from '../layouts/header.astro';
+import Nav from '../components/nav.astro';
+import Card from '../components/Card.astro';
+import Flower from "./flower.astro"
+import Usb from "../components/Usb.astro"
+import Tbtn from "../components/buttons/Transparent_btn.astro"
+import CTbtn from "../components/buttons/Cbtn.astro"
+import Sustainable from "../components/Sustainable.astro"
+import "../style.css"
+import "../featured-branding.css"
+import Slider from "../components/slider"
+import Tagline from "../components/Tagline.astro"
+import Footer from "../components/footer.astro";
+import Branding from "../components/Branding.astro"
 ---
 
-<!doctype html>
-<html lang="en-us">
-	<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	<body>
-		<Header title={SITE_TITLE} />
-		<main>
-			<About />
+<Header client:visible>
+	<header class="lg:flex flex-col justify-center items-start">
+		<Nav />
 
-			<br />
+		<div class="header-content lg:px-10 px-8 flex flex-col lg:pt-0 pt-16">
+			<div class="small-title pb-5">Your Digital Presence, Fully Managed</div>
+			<h1 class="pb-5">Design with Purpose</h1>
+			<div class="pb-8 header-description opacity-60">
+				Creating impactful, engaging, and <span class="text-[#00C71C]">sustainable</span> websites that put your<br> message first.
+			</div>
+			<div>
+				<button class="brand-button py-3 px-8 rounded-lg" style="background-color: #C9F001;">
+					Get sustainable site today
+				</button>
+			</div>
+			<div class="plug-in"></div>
+		</div>
+	</header>
 
-			<h3>Here's my most recent posts</h3>
+	<section>
+		<Flower />
+		<Usb />
+		<Branding />
 
-			<HomePosts allPosts={posts} />
+		<!-- Featured Websites -->
+		<div class="featured-branding lg:py-20 py-10 lg:px-16 px-8">
+			<div class="featured-branding-title flex lg:flex-row flex-col items-center justify-between lg:pb-16 pb-8">
+				<div class="text-[36px] font-medium leading-[43.57px] text-center font-inter text-white">Featured Websites</div>
+				<div class="identity-brand">
+					<button class="brand-button py-3 px-8 rounded-lg inline-flex items-center" style="background-color: #C9F001;">
+						<svg class="inline me-3" width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M7.07335 2.30402L1.51273 2.30402C1.25176 2.29948 1.00302 2.19263 0.820065 2.00647C0.637115 1.82031 0.5346 1.56974 0.5346 1.30874C0.5346 1.04773 0.637115 0.79716 0.820065 0.611003C1.00302 0.424845 1.25176 0.317991 1.51273 0.313455L9.47639 0.313456C9.60719 0.313082 9.73678 0.338569 9.85771 0.388455C9.97863 0.438339 10.0885 0.511637 10.181 0.604132C10.2735 0.696627 10.3468 0.806494 10.3967 0.927417C10.4466 1.04834 10.472 1.17793 10.4717 1.30874L10.4717 9.27239C10.4634 9.53079 10.3549 9.77582 10.1691 9.95563C9.98335 10.1354 9.73493 10.2359 9.4764 10.2359C9.21787 10.2358 8.96951 10.1351 8.78389 9.95514C8.59826 9.7752 8.48993 9.53009 8.48181 9.27169L8.48181 3.71107L1.73445 10.4584C1.54777 10.6451 1.29458 10.75 1.03058 10.75C0.766571 10.75 0.513379 10.6451 0.326699 10.4584C0.14002 10.2717 0.0351454 10.0185 0.0351451 9.75455C0.0351451 9.49054 0.140021 9.23735 0.3267 9.05067L7.07335 2.30402Z" fill="#282828"/>
+						</svg>
+						Get your sustainable site today
+					</button>
+				</div>
+			</div>
 
-			<p class="center">
-				You can also <a href="https://blahg.netlify.app/rss.xml">
-					subscribe with RSS!
-				</a>
-			</p>
-			<br />
+			<div class="kytz-flexbox pb-16">
+				<div class="flex lg:flex-row flex-col gap-6">
+					<div class="branding-webite flex-1">
+						<div class="websites-firstbox-first px-10 py-12 flex justify-between gap-10">
+							<div class="flexbox">
+								<div class="text-[14px] font-normal leading-[16.94px] text-start font-inter text-white opacity-50 py-6">Client: Freshara</div>
+								<div class="font-medium leading-[29.05px] tracking-[-0.04em] text-start font-inter text-white pb-6" style="font-size: 20px;">Eco Friendly - Low Carbon Site</div>
+								<Tbtn btnText="Sustainable">
+							</div>
+							<div class="visit-site">
+								<CTbtn colorbtnText="Visit Site" bgcolor="#363446" />
+							</div>
+						</div>
+						<ul class="seo-list px-14 pb-12"style="list-style-type: disc;">
+							<li>SEO optimized</li>
+							<li>End to End design and development</li>
+						</ul>
+						<div class="websites-firstbox-second-row py-8">
+							<div class="website-inner-layer w-full rounded-lg bg-[#D6E5BE]">
+								
+							</div>
+							<!-- <div class="website-firstbox-second-row-layer"></div> -->
+						</div>
+					</div>
+					<div class="branding-webite flex-1">
+						<div class="websites-firstbox-first px-10 py-12 flex justify-between gap-10">
+							<div class="flexbox">
+								<div class="text-[14px] font-normal leading-[16.94px] text-start font-inter text-white opacity-50 py-6">Client: RFL Valves</div>
+								<div class="font-medium leading-[29.05px] tracking-[-0.04em] text-start font-inter text-white pb-6" style="font-size: 20px;">Designed Modern Website</div>
+								<Tbtn btnText="Sustainable">
+							</div>
+							<div class="visit-site">
+								<CTbtn colorbtnText="Visit Site" bgcolor="#363446" />
+							</div>
+						</div>
+						<ul class="seo-list px-14 pb-12"style="list-style-type: disc;">
+							<li>SEO optimized</li>
+							<li>End to End design and development</li>
+						</ul>
+						<div class="websites-firstbox-second-row2 py-8 bg-[#55DFE8]">
+							<div class="website-inner-layer2 w-full rounded-lg">
+								
+							</div>
+							<!-- <div class="website-firstbox-second-row-layer"></div> -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
-			<Tags tags={tags} all />
-		</main>
+		<Sustainable />
+
+		<div class="slider lg:pt-20 pt-14 lg:px-16 px-8 pb-16 lg:mb-0 mb-16 relative">
+			<div class="young-talents">
+				<div class="young-talents-title lg:pb-20 pb-10">
+					<span>Providing results with</span><br>
+					<span style="color: #C9F001;">young talents</span>
+				</div>
+				<div class="forward-backward-arrows">
+					<div class="backward-arrow"></div>
+					<div class="forward-arrow"></div>
+				</div>
+			</div>
+			<Slider client:load/>
+		</div>
+
+		<Tagline />
+
 		<Footer />
-		<ColorScript />
-	</body>
-</html>
+</Header>
+
+

@@ -1,0 +1,76 @@
+/* -------------------- FEATURED WEBSITES ----------------
+______________________________________________________ */
+
+.featured-branding{
+    background-color: #06041A;
+}
+.website-content{
+    font-size: 17px;
+    font-weight: 500;
+    color: #FFFFFF;
+}
+
+.branding-webite{
+    background-color: #1A182C;
+    border-radius: 10px;
+}
+
+.website-box:nth-child(1){
+    flex-basis: 64%;
+}
+
+.websites-firstbox-second-row{
+    background-color:#D6E5BE;
+    overflow:hidden;
+    border-radius: 0 0px 10px 10px;
+}
+.websites-firstbox-second-row2{
+    background-color: #55DFE8;
+    overflow:hidden;
+    border-radius: 0 0px 10px 10px;
+}
+.seo-list{
+    font-family: Inter;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 27.2px;
+    letter-spacing: -0.04em;
+    text-align: left;
+    color: #FFFFFF;
+    opacity: .5;
+}
+.artham-beauty-image{
+    height: 365.15px;
+    background-image: url("../images/artham-beauty-image.webp");
+    background-size: cover;
+    border-radius: 0 0 10px 10px;
+}
+.website-inner-layer{
+    background-image: url(../public/freshara_mockup.webp);
+    height: 269.54px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position:center;
+}
+.website-inner-layer2{
+    background-image: url(../public/rfl_mockup.webp);
+    height: 269.54px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position:center;
+}
+
+@media (max-width: 600px){
+    .websitebox-inner-layer{
+        padding: 2rem;
+    }
+    .website-content{
+        display: none;
+    }
+    .website-inner-layer{
+        height: 365.15px;
+    }
+    .websites-firstbox-second-row{
+        border-radius: 0 0 10px 10px;
+    }
+}

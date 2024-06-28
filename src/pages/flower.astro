@@ -1,0 +1,79 @@
+---
+import BottomLLeaf from "../../public/leaf//bottomL_leaf.webp"
+import BottomRLeaf from "../../public/leaf/bottomR_leaf.webp"
+import Leaf from "../../public/leaf/leaf.webp"
+import "../flower.css"
+---
+
+<div class="flower-animation pt-10 lg:px-16 px-5 group lg:static relative bg-white">
+    <div class="flower-animation-inner-layer rounded-lg lg:flex flex-row">
+        <div class="flex-1 lg:pl-14 lg:py-14 py-8 px-5">
+            <div class="flower-text">We are experts in</div>
+            <div class="flower-details lg:w-full w-8/12">creating a sustainable green eco system through technology and green brandings</div>
+            <div class="flower-flex flex flex-row overflow-hidden">
+                <div class="flower-content-box self-center flex-1">
+                    <div class="flower-box-text1">Branding</div>
+                    <div class="flower-box-text2">Website Design</div>
+                    <div class="flower-box-text3">E-commerce development</div>
+                </div>
+            </div>  
+        </div>
+        <div class="basis-3/12 lg:relative static">
+            <div class="flower absolute lg:inset-x-0 top-20 flex justify-center">
+                <img class="leaf" src={ Leaf.src } />
+            </div>
+            <div class="flower-separate absolute lg:inset-x-0 top-20 flex justify-center">
+                <img class="bottomL_leaf" src={BottomLLeaf.src} />
+                <img class="bottomR_leaf" src={BottomRLeaf.src} />
+            </div>
+            <div class="absolute inset-x-0 flex justify-center">
+                <div class="tube width"></div>
+            </div>
+            <div class="stem absolute lg:inset-x-0 bottom-0 flex justify-center">
+                <div class="stem-line"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    /*  --------- VARIABLES --------------- */
+
+    var flower_contents1 = document.querySelector(".flower-box-text1");
+    var flower_contents2 = document.querySelector(".flower-box-text2");
+    var flower_contents3 = document.querySelector(".flower-box-text3");
+    var flower_stem = document.querySelector(".stem-line");
+    var leaf = document.querySelector(".leaf");
+    var flowerL_leaf = document.querySelector(".bottomL_leaf");
+    var flowerR_leaf = document.querySelector(".bottomR_leaf");
+    var tab_position= document.querySelector(".flower-animation").getBoundingClientRect().y;
+    var tab_number = Number(tab_position.toFixed());
+
+    if(window.innerWidth < 600) {
+        flowerL_leaf.setAttribute("src", "../../public/leaf/leftL.webp");
+        flowerR_leaf.setAttribute("src", "../../public/leaf/rightL.webp");
+        leaf.setAttribute("src", "../../public/leaf/sm-leaf.webp");
+    }
+
+   window.onscroll = () => {
+        var page_position = window.pageYOffset;
+        var page_cutoff = Number(page_position.toFixed());    
+
+        if(page_cutoff > (tab_number - 200)) {
+            flower_contents1.classList.add("move1");
+            flower_contents2.classList.add("move2");
+            flower_contents3.classList.add("move3");
+            flower_stem.classList.add("extend_stem");
+            flowerL_leaf.classList.add("rotateL");
+            flowerR_leaf.classList.add("rotateR");
+            leaf.classList.add("opacityLeaf");
+        }else{
+            flower_contents1.classList.remove("move1");
+            flower_contents2.classList.remove("move2");
+            flower_contents3.classList.remove("move3");
+            flower_stem.classList.remove("extend_stem");
+            flowerL_leaf.classList.remove("rotateL");
+            flowerR_leaf.classList.remove("rotateR");
+            leaf.classList.remove("opacityLeaf");
+        }
+   }
+</script>
