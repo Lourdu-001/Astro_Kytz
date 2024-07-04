@@ -1,0 +1,17 @@
+---
+const myHeaders = new Headers();
+myHeaders.append("Cookie", "_zcsr_tmp=4d0db7a3-d69b-41bb-9a92-be3f466fd9f1; iamcsr=4d0db7a3-d69b-41bb-9a92-be3f466fd9f1; zalb_b266a5bf57=a711b6da0e6cbadb5e254290f114a026");
+
+const requestOptions = {
+  method: "POST",
+  headers: myHeaders,
+  redirect: "follow"
+};
+fetch("https://accounts.zoho.com/oauth/v2/token?refresh_token=1000.dfb7c25df3c4699d51f93aa544e8b763.f2ebe2a1ffd11dd0276add61323fdae5&client_id=1000.NAC2RX9W35TEWEC44HT88MONN1KK2F&client_secret=9d6c39dddc74e63fcfdf0bdcf50891d42159678ea3&redirect_uri=https://www.google.com&grant_type=refresh_token", requestOptions)
+  .then((response) => response.json())
+  .then((result) => {
+    //  const { result } = Astro.props;
+    return result;
+  })
+  .catch((error) => console.error(error));
+---

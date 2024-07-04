@@ -71,7 +71,7 @@ import "../flower.css"
     var target = document.getElementById('foo'); // your canvas element
     var gauge = new Gauge(target).setOptions(opts); // create sexy gauge!
     gauge.maxValue = 200; // set max gauge value
-    gauge.animationSpeed = 900; // set animation speed (32 is default value)
+    gauge.animationSpeed = 600; // set animation speed (32 is default value)
 
     if(window.innerWidth < 600) {
         flowerL_leaf.setAttribute("src", "../../public/leaf/leftL.webp");
@@ -100,7 +100,6 @@ import "../flower.css"
             flowerR_leaf.classList.remove("rotateR");
             leaf.classList.remove("opacityLeaf");
         }
-
 
         if(page_cutoff > (meter_number -200)) {
             gauge.set(200);

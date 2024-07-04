@@ -1,0 +1,88 @@
+---
+import { Astro } from 'astro';
+import axios from 'axios';
+import { ZOHO_CLIENT_ID, ZOHO_CLIENT_SECRET, ZOHO_REFRESH_TOKEN } from "../env.d.ts"
+
+// Function to refresh access token using the refresh token
+const refreshAccessToken = async (refreshToken) => {
+  const tokenUrl = 'https://accounts.zoho.com/oauth/v2/token';
+
+  const params = new URLSearchParams();
+  params.append('grant_type', 'refresh_token');
+  params.append('client_id', ZOHO_CLIENT_ID); // Replace with your actual client ID
+  params.append('client_secret', ZOHO_CLIENT_SECRET); // Replace with your actual client secret
+  params.append('refresh_token', refreshToken);
+
+  const response = await axios.post(tokenUrl, params);
+  const token = response.data.access_token;
+  return token;
+};
+
+export async function post({ request }) {
+  const formData = await request.formData();
+  const name = formData.get('name');
+  const email = formData.get('email');
+
+  if (!name || !email) {
+    return new Response('Name and Email are required.', { status: 400 });
+  }
+
+  let accessToken = 'YOUR_INITIAL_ACCESS_TOKEN'; // Replace with your initial Zoho access token
+  const refreshToken = 'YOUR_REFRESH_TOKEN'; // Replace with your Zoho refresh token
+  const crmUrl = 'https://www.zohoapis.com/crm/v2/Leads';
+
+  const data = {
+    data: [
+      {
+        Last_Name: name,
+        Email: email,
+      }
+    ],
+    trigger: [
+      "approval",
+      "workflow",
+      "blueprint"
+    ]
+  };
+
+  try {
+    const response = await axios.post(crmUrl, data, {
+      headers: {
+        'Authorization': `Zoho-oauthtoken ${accessToken}`,
+        'Content-Type': 'application/json',
+      },
+    });
+
+    const responseData = response.data; // Parse the response data
+
+    // Check if the access token is invalid and needs to be refreshed
+    if (responseData.data[0].status === 'error' && responseData.data[0].code === 'INVALID_TOKEN') {
+      // Refresh the access token and retry the request
+      accessToken = await refreshAccessToken(refreshToken);
+      const retryResponse = await axios.post(crmUrl, data, {
+        headers: {
+          'Authorization': `Zoho-oauthtoken ${accessToken}`,
+          'Content-Type': 'application/json',
+        },
+      });
+
+      const retryResponseData = retryResponse.data; // Parse the retry response data
+
+      if (retryResponseData.data[0].status === 'error') {
+        throw new Error(retryResponseData.data[0].message);
+      }
+
+      return new Response('Form data submitted successfully.', { status: 200 });
+    }
+
+    if (responseData.data[0].status === 'error') {
+      throw new Error(responseData.data[0].message);
+    }
+
+    return new Response('Form data submitted successfully.', { status: 200 });
+  } catch (error) {
+    console.error('Error submitting form data:', error);
+    return new Response('Error submitting form data.', { status: 500 });
+  }
+}
+---

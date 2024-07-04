@@ -13,6 +13,7 @@
     "@astrojs/react": "^3.6.0",
     "@astrojs/tailwind": "^5.1.0",
     "astro": "^4.11.3",
+    "axios": "^1.7.2",
     "gauge-js": "^1.0.5",
     "punycode": "^2.3.1",
     "react": "^18.3.1",
