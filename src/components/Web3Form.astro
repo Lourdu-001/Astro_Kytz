@@ -1,0 +1,63 @@
+---
+import Close from "../../public/green_earth.webp"
+---
+---
+
+<div class="fixed hidden inset-0 backdrop-blur-2xl overflow-y-auto h-full w-full justify-center items-center" id="enquire_form">
+    <!--modal content-->
+    <div class="relative shadow-lg lg:w-3/6 w-11/12 rounded-md">
+        <!-- close button -->
+        <div class="absolute top-0 right-0 p-6 kytz_form_close" style="z-index: 1;">
+            <button>
+                <img width="12" height="12" src={Close.src}>
+            </button>
+        </div>
+        <!-- contact form -->
+        <div class="enquire_contact_form" id="enquire_popup_form">
+            <div class="form_section">
+                <div class="contact_heading pb-6">How we can help?</div>
+                <form action="https://api.web3forms.com/submit" method="POST">
+                    <!-- Replace with your Access Key -->
+                    <input type="hidden" name="access_key" value="eef15f7d-f8da-4e00-a000-c362e14eb7c0">
+                    <div class="flex lg:flex-row flex-wrap gap-5 flex-col justify-between form_datas">
+                        <div class="line w-full pb-5">
+                            <input type="checkbox" class="how-we-help-radio" id="Checkbox_1" name="Checkbox" value="HTML">
+                            <input type="checkbox" class="how-we-help-radio" id="Checkbox_2" name="Checkbox" value="Digital Marketing">
+                            <input type="checkbox" class="how-we-help-radio" id="Checkbox_3" name="Checkbox" value="Product Design">
+                            <input type="checkbox" class="how-we-help-radio" id="Checkbox_4" name="Checkbox" value="Others">
+                        
+                            <div class="flex gap-2 flex-wrap label-cover">
+                                <label class="how_label" for="Checkbox_1">Website Developement</label>
+                                <label class="how_label" for="Checkbox_2">E-Commerce</label>
+                                <label class="how_label" for="Checkbox_3">Digital Marketing</label>
+                                <label class="how_label" for="Checkbox_4">Branding</label>
+                            </div>
+                            <p id="Checkbox_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+                        </div>
+                        <div class="line w-full">
+                            <input type="text" class="line_field" id="Kname" name="name" maxlength="255" placeholder="Name*" required>
+                            <span class="error" id="username_err"> </span>
+                        </div>
+                        <div class="line w-full">
+                            <input type="text" class="line_field" id="Kcompany" maxlength="40" name="company name" placeholder="Company name (optional)" required>
+                            <span class="error" id="username_err"> </span>
+                        </div>
+                        <div class="line flex-1">
+                            <input type="text" maxlength="255" name="Email" class="line_field" id="email" placeholder="E-mail*" required>
+                            <span class="error" id="email_err"> </span>
+                        </div>
+                        <div class="line flex-1">
+                            <input type="text" name="phone" maxlength="18" id="knumber" class="line_field" placeholder="phone" required>
+                            <span class="error" id="mobile_err"> </span>
+                        </div>
+                        <div class="line w-full">
+                            <textarea class="line_field" name="message" id="Kmessage" maxlength="500" placeholder="Tell us about your project*"></textarea>
+                            <span class="error" id="message_err"> </span>
+                        </div>
+                        <div class=""><button class="apply_now mt-2 px-12 py-2" type="submit">submit</button></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
