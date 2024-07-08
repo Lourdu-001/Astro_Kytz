@@ -1,0 +1,164 @@
+---
+import LogoFooter from "../../public/kytz_footer_logo.webp"
+import Co2 from "../../public/co2_percentage.webp"
+import Cbtn from "../components/buttons/Cbtn.astro";
+---
+
+<div class="footer lg:px-16 px-8 py-12">
+    <div class="footer-logo-section flex flex-row justify-between lg:items-start items-center pb-10">
+        <img src={LogoFooter.src} width="180" height="63.41" />
+        <Cbtn colorbtnText="Contact Us"  bgcolor="#C9F001" textColor="#000" />
+    </div>
+    <!-- line -->
+    <div>
+        <div class="sustainable_line"></div>
+    </div>
+    <div class="footer-inner-layer flex lg:flex-row flex-col justify-between pt-12">
+        <div class="quick-links-section lg:block hidden">
+            <div class="quick-link opacity-50 pb-10 mb-6">QUICK LINKS</div>
+            <div class="quick-link">Home</div>
+            <div class="quick-link">Company</div>
+            <div class="quick-link">Website Case Studies</div>
+            <div class="quick-link">Brand Case Studies</div>
+            <div class="quick-link">Contact</div>
+        </div>
+        <div class="quick-links-section mobi_quick py-10">
+            <div class="quick-link opacity-50 pb-2">QUICK LINKS</div>
+            <div class="flex flex-row flex-wrap gap-4">
+                <div class="quick-link">Home</div>
+                <div class="quick-link">Company</div>
+                <div class="quick-link">Website Case Studies</div>
+                <div class="quick-link">Brand Case Studies</div>
+                <div class="quick-link">Contact</div>
+            </div>
+        </div>
+        <div class="social-media-section lg:block hidden">
+            <div class="quick-link opacity-50 pb-10 mb-6">SOCIAL MEDIA</div>
+            <div class="quick-link">LinkedIn</div>
+            <div class="quick-link">Youtybe</div>
+            <div class="quick-link">Instagram</div>
+            <div class="quick-link">X</div>
+        </div>
+        <div class="social-media-section lg:hidden block pt-10 pb-10">
+            <div class="quick-link opacity-50 pb-2">SOCIAL MEDIA</div>
+            <div class="flex flex-row justify-between">
+                <div class="quick-link">LinkedIn</div>
+                <div class="quick-link">Youtybe</div>
+                <div class="quick-link">Instagram</div>
+                <div class="quick-link">Twitter X</div>
+            </div>
+        </div>
+        <div class="website-carbon-section flex flex-col justify-between lg:block hidden">
+            <div class="carbon-percentage pb-5">
+                <img src={ Co2.src } width="266.78" height="27.77" > 
+            </div>
+            <div class="other-statics">
+                <div class="quick-link">Cleaner than 86% of pages tested</div>
+                <div class="quick-link" style="border-bottom: 1px dashed white"></div>
+                <div class="quick-link py-3 opacity-50">100% Green website</div>
+                <div class="quick-link opacity-50">Hosted on Green Server</div>
+            </div>
+        </div>
+        <div class="">
+           <div class="text-[inter] font-[400] text-[17px] leading-[27.2px] text-white pb-6">Members of</div>
+           <div class="flex lg:flex-row items-center gap-6">
+                <img width="113.96px" height="19.15px" src="../../public//Icons/nasscom.webp" alt="nasscom">
+                <img width="48.06px" height="34.1px" src="../../public//Icons/c2.webp" alt="cII">
+           </div>
+           <div class="mt-6">
+                <img class="flex-none" width="113.96px" height="46.95px" src="../../public//Icons/sme_climate.webp" alt="cII">
+           </div>
+        </div>
+        <div class="website-carbon-section flex flex-col justify-between pt-10 lg:hidden block">
+            <div class="carbon-percentage flex justify-center pb-3">
+                <img src={ Co2.src } width="266.78" height="27.77" > 
+            </div>
+            <div class="other-statics flex flex-col items-center">
+                <div class="quick-link text-center">Cleaner than 86% of pages tested</div>
+                <div class="quick-link w-10/12" style="border-bottom: 1px dashed white"></div>
+                <div class="quick-link py-3 opacity-50">100% Green website</div>
+                <div class="quick-link opacity-50 pb-10">Hosted on Green Server</div>
+            </div>
+        </div>
+    </div>
+    <!-- line -->
+    <div class="mt-10">
+        <div class="sustainable_line"></div>
+    </div>
+    <div class="flex pt-4 flex lg:flex-row flex-row items-center justify-between">
+        <div class="venzo_footer">
+            A brand of <a href="" target="_blank" class="text-white underline">Venzo Technologies</a>
+            <svg class="inline" width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8.21467 13.5057L2.0087 7.29972C1.51367 6.80469 1.18365 6.22917 1.01864 5.57315C0.857659 4.91714 0.859671 4.26515 1.02468 3.61719C1.18969 2.9652 1.5177 2.39773 2.0087 1.91477C2.51178 1.41974 3.08529 1.09174 3.72923 0.930753C4.37719 0.765743 5.02314 0.765743 5.66708 0.930753C6.31505 1.09576 6.89057 1.42377 7.39364 1.91477L8.21467 2.71165L9.03569 1.91477C9.54279 1.42377 10.1183 1.09576 10.7623 0.930753C11.4062 0.765743 12.0501 0.765743 12.6941 0.930753C13.342 1.09174 13.9176 1.41974 14.4206 1.91477C14.9116 2.39773 15.2396 2.9652 15.4047 3.61719C15.5697 4.26515 15.5697 4.91714 15.4047 5.57315C15.2437 6.22917 14.9157 6.80469 14.4206 7.29972L8.21467 13.5057Z" fill="#FF0000" fill-opacity="0.75"/>
+            </svg>
+        </div>
+        <div class="copyright block text-center">Copyrights Reserved @ Kytz</div>
+    </div>
+</div>
+<style>
+    /* -------------------- FOOTER ----------------
+______________________________________________________ */
+
+    .footer{
+        background-color: #06041A;
+    }
+    .mobi_quick{
+        display: none;
+    }
+    .copyright{
+        font-family: Inter;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 22.4px;
+        letter-spacing: -0.01em;
+        text-align: left;
+        color: #FFFFFF4D;
+    }
+    .quick-link{
+        font-family: Inter;
+        font-size: 17px;
+        font-weight: 500;
+        line-height: 27.2px;
+        letter-spacing: -0.04em;
+        text-align: left;
+        color: #FFFFFF;
+        padding-bottom: .5em;
+    }
+    .carbon-percentage{
+        border-radius: 10px;
+    }
+    .venzo_footer{
+        font-family: Inter;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 22.4px;
+        letter-spacing: -0.01em;
+        text-align: left;
+        color: rgba(255, 255, 255, .6);
+    }
+    .sustainable_line{
+        background-image: url("../../public/white_line.webp");
+        width:100%;
+        height: 2px;
+        background-size: 100%;
+    }
+    @media (max-width: 600px) {
+        .footer-logo-section > img {
+            max-width: 30%;
+        }
+        .footer-logo-section {
+            padding-bottom: 2.5rem;
+        }
+        .social-media-section{
+            border-bottom: 1px dashed white;
+        }
+        .quick-links-section {
+            border-top: 1px dashed white;
+            border-bottom: 1px dashed white;
+        }
+        .website-carbon-section{
+            border-bottom: 1px dashed white;
+        }
+    }
+
+</style>

@@ -16,15 +16,17 @@ import Close from "../../public/green_earth.webp"
         <div class="enquire_contact_form" id="enquire_popup_form">
             <div class="form_section">
                 <div class="contact_heading pb-6">How we can help?</div>
-                <form action="https://api.web3forms.com/submit" method="POST">
+                <form method="POST" id="w3form">
                     <!-- Replace with your Access Key -->
                     <input type="hidden" name="access_key" value="eef15f7d-f8da-4e00-a000-c362e14eb7c0">
+                    <input type="hidden" name="replyto" value="shelton@venzotechnologies.com" />
+                    <input type="hidden" name="from_name" value="Kytz Enquiry">
                     <div class="flex lg:flex-row flex-wrap gap-5 flex-col justify-between form_datas">
                         <div class="line w-full pb-5">
-                            <input type="checkbox" class="how-we-help-radio" id="Checkbox_1" name="Checkbox" value="HTML">
-                            <input type="checkbox" class="how-we-help-radio" id="Checkbox_2" name="Checkbox" value="Digital Marketing">
-                            <input type="checkbox" class="how-we-help-radio" id="Checkbox_3" name="Checkbox" value="Product Design">
-                            <input type="checkbox" class="how-we-help-radio" id="Checkbox_4" name="Checkbox" value="Others">
+                            <input type="checkbox" class="how-we-help-radio" id="Checkbox_1" name="checkdata" value="Website Developement">
+                            <input type="checkbox" class="how-we-help-radio" id="Checkbox_2" name="checkdata" value="E-Commerce">
+                            <input type="checkbox" class="how-we-help-radio" id="Checkbox_3" name="checkdata" value="Digital Marketing">
+                            <input type="checkbox" class="how-we-help-radio" id="Checkbox_4" name="checkdata" value="Branding">
                         
                             <div class="flex gap-2 flex-wrap label-cover">
                                 <label class="how_label" for="Checkbox_1">Website Developement</label>
@@ -35,29 +37,38 @@ import Close from "../../public/green_earth.webp"
                             <p id="Checkbox_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
                         </div>
                         <div class="line w-full">
-                            <input type="text" class="line_field" id="Kname" name="name" maxlength="255" placeholder="Name*" required>
+                            <input type="text" class="line_field" id="Kname" name="name" maxlength="255" placeholder="Name*" >
                             <span class="error" id="username_err"> </span>
                         </div>
                         <div class="line w-full">
-                            <input type="text" class="line_field" id="Kcompany" maxlength="40" name="company name" placeholder="Company name (optional)" required>
+                            <input type="text" class="line_field" id="Kcompany" maxlength="40" name="company name" placeholder="Company name (optional)" >
                             <span class="error" id="username_err"> </span>
                         </div>
                         <div class="line flex-1">
-                            <input type="text" maxlength="255" name="Email" class="line_field" id="email" placeholder="E-mail*" required>
+                            <input type="text" maxlength="255" name="Email" class="line_field" id="Kemail" placeholder="E-mail*" >
                             <span class="error" id="email_err"> </span>
                         </div>
                         <div class="line flex-1">
-                            <input type="text" name="phone" maxlength="18" id="knumber" class="line_field" placeholder="phone" required>
+                            <input type="text" name="phone" maxlength="18" id="Knumber" class="line_field" placeholder="phone">
                             <span class="error" id="mobile_err"> </span>
                         </div>
                         <div class="line w-full">
                             <textarea class="line_field" name="message" id="Kmessage" maxlength="500" placeholder="Tell us about your project*"></textarea>
                             <span class="error" id="message_err"> </span>
                         </div>
-                        <div class=""><button class="apply_now mt-2 px-12 py-2" type="submit">submit</button></div>
+                        <div class=""><button class="apply_now mt-2 px-12 py-2" id="submitbtn">submit</button></div>
                     </div>
                 </form>
             </div>
+        </div>
+        <!-- thank messaage -->
+        <div class="enquire_thnkmss text-center">
+            <h3 class="text-3xl leading-6 font-medium text-gray-900" style="line-height:2rem;">Thanks for contacting us!</h3>
+             <div class="mt-2 px-7 py-3">
+                 <p class="text-md text-gray-500">
+                     We will get back to you soon!
+                 </p>
+             </div>
         </div>
     </div>
 </div>

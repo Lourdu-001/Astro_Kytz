@@ -1,0 +1,30 @@
+fetch('https://api.web3forms.com/submit', {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json',
+						'Accept': 'application/json'
+					},
+					body: json
+				})
+				.then(async (response) => {
+					let json = await response.json();
+					if (response.status == 200) {
+						contact_form.style.display="none";
+						thnkms.style.display="block";
+					} else {
+						console.log(response);
+						submitbtn.innerHTML = json.message;
+					}
+				})
+				.catch(error => {
+					console.log(error);
+					submitbtn.innerHTML = "Something went wrong!";
+				})
+				.then(function() {
+					w3form.reset();
+					// setTimeout(() => {
+					// 	thnkms.style.display = "none";
+					// 	contact_form.style.display="block";
+					// 	enquire_box.style.display="none";
+					// }, 5000);
+				});

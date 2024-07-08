@@ -12,7 +12,8 @@ import "../style.css";
 import "../featured-branding.css";
 import Slider from "../components/slider";
 import Tagline from "../components/Tagline.astro";
-import Footer from "../components/footer.astro";
+// import Footer from "../components/footer.astro";
+import Footer from "../components/KytzFooter.astro";
 import Branding from "../components/Branding.astro";
 import Web3form from "../components/Web3Form.astro"
 ---
@@ -185,38 +186,74 @@ import Web3form from "../components/Web3Form.astro"
             checkmessage();
         });
 
-        $('#submitbtn').click(function () {
+        $('#submitbtn').click(function (e) {
+			e.preventDefault();
+
             if (!checkuser() && !checkemail() && !checkmobile() && !checkmessage()) {
                 $("#message").html(`<div class="alert alert-warning">Please fill all required field</div>`);
             } else if (!checkuser() || !checkemail() || !checkmobile() || !checkmessage() ) {
                 $("#message").html(`<div class="alert alert-warning">Please fill all required field</div>`);
             } else{
                 $("#message").html("");
-                // var form = $('#enquire_main_form')[0];
-                // var data = new FormData(form);
-                
-                // Gather form data
-                const formData = $('#enquire_main_form').serializeArray();
-                const leadData = {};
-                $.each(formData, function() {
-                    leadData[this.name] = this.value;
-                });
+				const contact_form = document.querySelector(".enquire_contact_form");
+				const enquire_box = document.getElementById("enquire_form");
+				const w3form = document.getElementById("w3form");
+				const thnkms = document.querySelector(".enquire_thnkmss");
+				const submit = document.getElementById("submitbtn");
 
-				fetch('/api/submit-form', {
+				// const formData = new FormData(w3form);
+				// const object = Object.fromEntries(formData);
+				// const json = JSON.stringify(object);
+
+				const formData = new FormData(w3form);
+   				const object = {};
+
+				formData.forEach((value, key) => {
+					// Check if the key already exists
+					if (!object[key]) {
+						object[key] = value; // If not, add the value directly
+					} else {
+						// If it exists, check if it's an array
+						if (Array.isArray(object[key])) {
+							object[key].push(value); // If it is an array, push the new value
+						} else {
+							// If it's not an array, convert it to an array and add the new value
+							object[key] = [object[key], value];
+						}
+					}
+				});
+
+				const json = JSON.stringify(object);
+				
+				fetch('https://api.web3forms.com/submit', {
 					method: 'POST',
 					headers: {
 						'Content-Type': 'application/json',
+						'Accept': 'application/json'
 					},
-					body: JSON.stringify(leadData),
-					})
-					.then(response => response.json())
-					.then(data => {
-					console.log('Form submission successful:', data);
-					alert('Form submitted successfully');
-					})
-					.catch(error => {
-					console.error('Error submitting form:', error);
-					alert('Error submitting form');
+					body: json
+				})
+				.then(async (response) => {
+					let json = await response.json();
+					if (response.status == 200) {
+						contact_form.style.display="none";
+						thnkms.style.display="block";
+					} else {
+						console.log(response);
+						submit.innerHTML = json.message;
+					}
+				})
+				.catch(error => {
+					console.log(error);
+					submit.innerHTML = "Something went wrong!";
+				})
+				.then(function() {
+					w3form.reset();
+					setTimeout(() => {
+						thnkms.style.display = "none";
+						contact_form.style.display="block";
+						enquire_box.style.display="none";
+					}, 5000);
 				});
             }
         })
@@ -279,7 +316,7 @@ import Web3form from "../components/Web3Form.astro"
             }
         }
     }
-
+	enquire_form();
 </script>
 
 
